@@ -1,0 +1,14 @@
+@import "./colors/theme.scss";
+@import "./mixins/mixins";
+@import "./misc/base";
+@import "./components/components";
+@import "pages/static/_static.scss";
+@import "pages/_pages.scss";
+
+.design-palette {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    max-width: 100%;
+}

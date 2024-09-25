@@ -1,0 +1,29 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@{
+	Layout = null;
+	ViewBag.Title = Model?.Value("pageTitle") ?? null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://kit.fontawesome.com/a576612222.css" crossorigin="anonymous">
+		<link rel="stylesheet" href="/css/scss/main.css">
+		<title>@ViewBag.Title</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			@await Html.PartialAsync("static/topbar")
+			@await Html.PartialAsync("static/header")
+			<main>
+				@RenderBody()
+			</main>
+			@await Html.PartialAsync("static/footer")
+		</div>
+		<script src="/scripts/main.js"></script>
+	</body>
+</html>
