@@ -1,0 +1,38 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@{
+	Layout = "mainLayout.cshtml";
+	ViewBag.Title = Model?.Value("pageTitle") ?? null;
+
+	var selection = Umbraco.Content(Guid.Parse("f9b215a0-49f5-4541-a3b5-794d88ed0be5"))
+    .ChildrenOfType("projectItemTemplate")
+    .Where(x => x.IsVisible());
+}
+
+
+<section>
+    <div class="container">
+        <div>
+            @foreach (var item in selection) {
+                var image = item?.Value<IPublishedContent>("thumbnailImage")?.Url() ?? "";
+                var preamble = item?.Value<string>("preamble") ?? "";
+                var projectDate = item?.Value<string>("projectDate") ?? "";
+                
+                    <div class="ProjectItem">
+                        <img class="projectImg" src="@image" alt="@item.Name">
+                        <div class="projectContent">
+                            <h4>@item.Name</h4>
+                            <div><i class="fa-light fa-calendar-days"></i> @projectDate</div>
+                            <span>@preamble</span>
+                            <div>
+                                 <a href="@item.Url()"> Read more  <i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                            </div> 
+                        </div>
+                    </div>
+            }
+        </div>
+    </div>
+</section>
+
+@await Html.PartialAsync("static/yourNextProject")

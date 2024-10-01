@@ -1,0 +1,29 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+
+@{
+	Layout = "mainLayout.cshtml";
+	var aboutUsImg = Model?.Value<IPublishedContent>("aboutUsImg")?.Url() ?? "";
+	var greatReviewsImg = Model?.Value<IPublishedContent>("greatReviewsImg")?.Url() ?? "";
+}
+
+<div class="container aboutUs">
+	<div>
+		<img src="@aboutUsImg" >
+		<p>@Model.Value("imageName")</p>
+	</div>
+	<div class="aboutUsText">
+		@Model?.Value("aboutUsText")
+	</div>
+</div>
+
+<section class="greatViews bg-gray">
+	<div class="container greatReviewsContent ">
+		@Model.Value("greatReviewsContent")
+	</div>
+	<img  src="@greatReviewsImg" >
+</section>
+
+
+@await Html.PartialAsync("static/yourNextProject")

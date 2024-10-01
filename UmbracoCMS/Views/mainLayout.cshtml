@@ -4,6 +4,7 @@
 @{
 	Layout = null;
 	ViewBag.Title = Model?.Value("pageTitle") ?? null;
+
 }
 
 <!DOCTYPE html>
@@ -17,12 +18,16 @@
 	</head>
 	<body>
 		<div class="wrapper">
-			@await Html.PartialAsync("static/topbar")
-			@await Html.PartialAsync("static/header")
+			<header>
+				@await Html.PartialAsync("static/topbar")
+				@await Html.PartialAsync("static/header")
+			</header>
 			<main>
 				@RenderBody()
 			</main>
-			@await Html.PartialAsync("static/footer")
+			<footer>
+				@await Html.PartialAsync("static/footer")
+			</footer>
 		</div>
 		<script src="/scripts/main.js"></script>
 	</body>

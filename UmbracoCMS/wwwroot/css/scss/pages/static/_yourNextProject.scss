@@ -1,0 +1,18 @@
+.yourNextProject {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 100px;
+
+    .yourNextProjectText {
+        padding-left: 150px;
+    }
+
+    i {
+        padding-right: 10px;
+    }
+
+    .Text-Bold {
+        font-weight: bold;
+    }
+}

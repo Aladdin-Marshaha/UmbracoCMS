@@ -43,7 +43,7 @@ body {
 }
 
 span {
-  color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 .bg-secondary span {
@@ -93,10 +93,10 @@ a:hover, a:focus, a:active {
 }
 
 .bg-light a {
-  color: var(--color-secondary);
+  color: var(--color-primary);
 }
 .bg-light a:hover, .bg-light a:focus, .bg-light a:active {
-  color: var(--color-primary);
+  color: var(--color-secondary);
 }
 
 .btn-dark {
@@ -1173,7 +1173,7 @@ a {
   font-weight: 400;
   font-style: normal;
   font-size: 1em;
-  text-decoration: underline;
+  text-decoration: none;
   /*    &[target= "_blank"] {
 
           &::after {
@@ -1188,7 +1188,7 @@ a {
       }*/
 }
 a:hover {
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 p {
@@ -1240,8 +1240,49 @@ h6 {
   margin-left: 1.5rem;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+.header .navItem {
+  margin-left: 76px;
+}
+
+.btn-circle {
+  display: none;
+}
+
 .copyright {
   display: flex;
+  padding-top: 15px;
+  margin-bottom: -40px;
+}
+
+.yourNextProject {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 100px;
+}
+.yourNextProject .yourNextProjectText {
+  padding-left: 150px;
+}
+.yourNextProject i {
+  padding-right: 10px;
+}
+.yourNextProject .Text-Bold {
+  font-weight: bold;
+}
+
+.our-services .container .headline {
+  padding: 50px;
+}
+.our-services .container .services {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
 }
 
 .image-slider .slides {
@@ -1249,6 +1290,39 @@ h6 {
   justify-content: space-between;
   align-items: center;
 }
+.aboutUs {
+  margin-top: 150px;
+  display: flex;
+}
+.aboutUs .aboutUsText {
+  margin-left: 50px;
+}
+
+.greatViews {
+  display: flex;
+  margin-top: 100px;
+}
+.greatViews .greatReviewsContent {
+  padding-top: 100px;
+  padding-left: 100px;
+}
+
+.map {
+  width: 100%;
+}
+
+.ProjectItem {
+  display: flex;
+  align-items: center;
+}
+.ProjectItem .projectImg {
+  padding-right: 35px;
+  padding-bottom: 35px;
+}
+.ProjectItem .projectContent {
+  display: block;
+}
+
 .design-palette {
   display: flex;
   justify-content: center;
