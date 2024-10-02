@@ -6,6 +6,10 @@
 	Layout = "mainLayout.cshtml";
 	var aboutUsImg = Model?.Value<IPublishedContent>("aboutUsImg")?.Url() ?? "";
 	var greatReviewsImg = Model?.Value<IPublishedContent>("greatReviewsImg")?.Url() ?? "";
+
+	var selection = Umbraco.Content(Guid.Parse("5f71e309-954f-4a78-963f-9b3287976196"))
+    .ChildrenOfType("ourExpert")
+    .Where(x => x.IsVisible());
 }
 
 <div class="container aboutUs">
@@ -26,4 +30,31 @@
 </section>
 
 
+
+
+<section class="our-expert">
+  <div class="center">
+    <h6>@Model.Value("sectionTitle")</h6>
+    <h2>@Model.Value("sectionHeadline")</h2>
+  </div>
+  <div class="container parent">
+    @foreach (var item in selection) {
+      var image = item?.Value<IPublishedContent>("employeesImg")?.Url() ?? "";
+      var employeesRole = item?.Value<string>("employeesRole") ?? "";
+    
+      <div class="child">
+        <img src="@image" />
+        <h5 class="employees-name">@item.Name()</h5>
+        <p>@employeesRole</p>
+      </div>
+    }
+  </div>
+</section>
+
+
+
 @await Html.PartialAsync("static/yourNextProject")
+
+
+
+

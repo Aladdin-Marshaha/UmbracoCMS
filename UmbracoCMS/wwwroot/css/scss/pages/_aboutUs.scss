@@ -15,3 +15,21 @@
         padding-left: 100px;
     }
 }
+
+
+.our-expert {
+    padding-top: 100px;
+
+    .parent {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+
+        .child {
+            display: block;
+            .employees-name {
+                padding-top: 20px;
+            }
+        }
+    }
+}

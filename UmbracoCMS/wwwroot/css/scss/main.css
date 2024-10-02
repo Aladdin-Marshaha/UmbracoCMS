@@ -1307,6 +1307,21 @@ h6 {
   padding-left: 100px;
 }
 
+.our-expert {
+  padding-top: 100px;
+}
+.our-expert .parent {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+.our-expert .parent .child {
+  display: block;
+}
+.our-expert .parent .child .employees-name {
+  padding-top: 20px;
+}
+
 .map {
   width: 100%;
 }
