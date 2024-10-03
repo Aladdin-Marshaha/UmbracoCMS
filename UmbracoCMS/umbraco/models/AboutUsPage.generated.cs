@@ -112,5 +112,13 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("sectionTitle")]
 		public virtual string SectionTitle => this.Value<string>(_publishedValueFallback, "sectionTitle");
+
+		///<summary>
+		/// Testt
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("testt")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel Testt => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel>(_publishedValueFallback, "testt");
 	}
 }

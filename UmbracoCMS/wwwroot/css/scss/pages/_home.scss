@@ -1,9 +1,37 @@
+.heroSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .hero-img {
+        z-index: 0;
+    }
+
+    .container1 {
+        z-index: 1;
+        position: absolute;
+
+        .hero-text {
+            top: 10%;
+            width: 60%;
+            z-index: 1;
+        }
+    }
+}
+
+
+
+
+
+
+
 .our-services {
     .container {
         .headline {
             padding: 50px;
-
         }
+
         .services {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;

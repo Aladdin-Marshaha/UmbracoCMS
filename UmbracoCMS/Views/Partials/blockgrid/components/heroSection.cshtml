@@ -1,0 +1,23 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+@{
+    var heroImage = Model?.Content.Value<IPublishedContent>("heroImage")?.Url() ?? null;
+	var heroTitle = Model?.Content.Value<string>("heroTitle") ?? "";
+	var heroParagraph = Model?.Content.Value<string>("heroParagraph") ?? "";
+
+    var buttonText = Model?.Content.Value<string>("buttonText") ?? "";
+    var buttonUrl = Model?.Content.Value<string>("buttonUrl") ?? "";   
+}
+
+<div class="heroSection">
+    <img class="hero-img" src="@heroImage" alt=""/>
+    <div class="container container1">
+        <div class="hero-text">
+            <h2>@heroTitle</h2>
+            <p>@heroParagraph</p>
+            <a class="btn btn-primary" href="@buttonUrl">@buttonText</a>
+        </div>
+    </div>
+</div>

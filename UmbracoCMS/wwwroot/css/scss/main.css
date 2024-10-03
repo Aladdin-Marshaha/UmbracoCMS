@@ -1276,6 +1276,25 @@ h6 {
   font-weight: bold;
 }
 
+.heroSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.heroSection .hero-img {
+  z-index: 0;
+}
+.heroSection .container1 {
+  z-index: 1;
+  position: absolute;
+}
+.heroSection .container1 .hero-text {
+  top: 10%;
+  width: 60%;
+  z-index: 1;
+}
+
 .our-services .container .headline {
   padding: 50px;
 }

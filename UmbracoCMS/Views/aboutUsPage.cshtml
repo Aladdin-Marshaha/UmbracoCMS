@@ -1,15 +1,17 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 
-
 @{
 	Layout = "mainLayout.cshtml";
+  	ViewBag.Title = Model?.Value("pageTitle") ?? null;
+
 	var aboutUsImg = Model?.Value<IPublishedContent>("aboutUsImg")?.Url() ?? "";
 	var greatReviewsImg = Model?.Value<IPublishedContent>("greatReviewsImg")?.Url() ?? "";
 
 	var selection = Umbraco.Content(Guid.Parse("5f71e309-954f-4a78-963f-9b3287976196"))
     .ChildrenOfType("ourExpert")
     .Where(x => x.IsVisible());
+
 }
 
 <div class="container aboutUs">
@@ -53,8 +55,5 @@
 
 
 
+
 @await Html.PartialAsync("static/yourNextProject")
-
-
-
-
